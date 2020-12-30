@@ -1,6 +1,16 @@
-#include <iostream>
 
+#include <time.h>
+#include <stdlib.h>
+#include<time.h>
+#include<ctype.h>
+#include <time.h>
+#include <unistd.h>
+
+#include "Pravidla.cpp"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    Pravidla pravidla;
+    pravidla.printBorder();
+
 }
+
+

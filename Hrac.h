@@ -10,7 +10,7 @@
 
 class Hrac {
 public:
-    Hrac(Hadik* phadik);
+    Hrac(Hadik* phadik) {}
     int getBody(){
         return body;
     }

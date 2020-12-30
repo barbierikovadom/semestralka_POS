@@ -3,7 +3,4 @@
 //
 #include "Hrac.h"
 
-Hrac::Hrac(Hadik* phadik){
-    this->hadik = phadik;
-    this->hadik->setFarba()
-}
+

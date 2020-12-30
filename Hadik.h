@@ -12,7 +12,7 @@ using namespace std;
 
 class Hadik{
 public:
-    Hadik();
+    Hadik(const string &farba) : farba(farba) {}
 
     const string getFarba() const {
         return this->farba;
@@ -36,6 +36,11 @@ public:
 
     void setY(int py) {
         this->y = py;
+    }
+
+    void goTo(int px, int py){
+        this->setX(px);
+        this->setY(py);
     }
 
 private:
