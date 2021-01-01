@@ -47,4 +47,5 @@ private:
     string farba;
     int x;
     int y;
+    int dlzka;
 };
