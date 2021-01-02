@@ -11,12 +11,15 @@
 class Hrac {
 public:
     Hrac(Hadik* phadik) {}
+
     int getBody(){
         return body;
     }
+
 private:
     int body;
     Hadik* hadik;
     int poradie;
+
 };
 
