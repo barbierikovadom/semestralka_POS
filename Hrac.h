@@ -10,10 +10,17 @@
 
 class Hrac {
 public:
-    Hrac(Hadik* phadik) {}
+    Hrac(Hadik* phadik) {
+        this->hadik=phadik;
+        this->body=0;
+    }
 
     int getBody(){
         return body;
+    }
+
+    void zvysBody(){
+        this->body++;
     }
 
 private:

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <curses.h>
 
 #ifndef SEMESTRALKA_PRAVIDLA_H
 #define SEMESTRALKA_PRAVIDLA_H
@@ -13,33 +14,33 @@ using namespace std;
 class Pravidla {
 public:
     Pravidla() {
-        for (int i = 0; i < 40; i++) {
-            pole[i] = new string[40];
-            for (int j = 0; j < 40; j++) {
+        for (int i = 0; i < 20; i++) {
+            pole[i] = new string[20];
+            for (int j = 0; j < 20; j++) {
                 pole[i][j] = "  ";
             }
         }
     }
 
     void printBorder() {
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 20; i++) {
             pole[0][i] = "* ";
-            pole[39][i] = "* ";
+            pole[19][i] = "* ";
         }
 
-        for (int j = 0; j < 40; j++) {
-            for (int i = 0; i < 40; i++) {
-                if (i == 0 || i == 39) {
+        for (int j = 0; j < 20; j++) {
+            for (int i = 0; i < 20; i++) {
+                if (i == 0 || i == 19) {
                     pole[j][0] = "* ";
-                    pole[j][39] = "* ";
+                    pole[j][19] = "* ";
                 }
             }
         }
-    this->vypisPole(this->pole);
+    this->vypisPole();
     }
 
     ~Pravidla(){
-        for(int i = 0; i < 40; i++) {
+        for(int i = 0; i < 20; i++) {
             delete[] pole[i];
         }
         delete[] pole;
@@ -50,10 +51,10 @@ public:
         return pole;
     }
 
-    void vypisPole(string** pPole){
-        for (int j = 0; j < 40; j++) {
-            for (int i = 0; i < 40; i++) {
-                cout << pPole[j][i] ;
+    void vypisPole(){
+        for (int j = 0; j < 20; j++) {
+            for (int i = 0; i < 20; i++) {
+                cout << pole[j][i] ;
             }
             cout << endl;
         }
@@ -63,8 +64,10 @@ public:
         this->pole = pole;
     }
 
+
+
 private:
-    string** pole = new string*[40];
+    string** pole = new string*[20];
 
 };
 

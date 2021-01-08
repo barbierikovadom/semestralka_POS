@@ -12,8 +12,8 @@
 class ZbieraneObjekty{
 public:
     ZbieraneObjekty(){
-        this->x = rand() % 37 + 1;
-        this->y = rand() % 37 + 1;
+        this->x = rand() % 17 + 1;
+        this->y = rand() % 17 + 1;
         this->pocetBodov = 0;
         this->zjedeny = true;
     }
@@ -45,8 +45,8 @@ public:
 
     void vytvorNovyObjekt() {
         if(zjedeny== true){
-            this->x = rand() % 37 + 1;
-            this->y = rand() % 37 + 1;
+            this->x = rand() % 17 + 1;
+            this->y = rand() % 17 + 1;
             this->pole[x][y] = "? ";
             this->zjedeny = false;
         }
