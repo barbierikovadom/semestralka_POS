@@ -1,5 +1,5 @@
 //
-// Created by Katarína Kalusová on 30/12/2020.
+// Created by Dominika Barbieriková & Katarína Kalusová on 30/12/2020.
 //
 #include <iostream>
 #include <stdio.h>
@@ -13,58 +13,18 @@ using namespace std;
 
 class Pravidla {
 public:
-    Pravidla() {
-        for (int i = 0; i < 20; i++) {
-            pole[i] = new string[20];
-            for (int j = 0; j < 20; j++) {
-                pole[i][j] = "  ";
-            }
-        }
-    }
-
-    void printBorder() {
-        for (int i = 0; i < 20; i++) {
-            pole[0][i] = "* ";
-            pole[19][i] = "* ";
-        }
-
-        for (int j = 0; j < 20; j++) {
-            for (int i = 0; i < 20; i++) {
-                if (i == 0 || i == 19) {
-                    pole[j][0] = "* ";
-                    pole[j][19] = "* ";
-                }
-            }
-        }
-    this->vypisPole();
-    }
+    Pravidla();
+    void printBorder();
+    void vypisPole();
+    string **getPole();
+    void setPole(string **pole);
 
     ~Pravidla(){
         for(int i = 0; i < 20; i++) {
             delete[] pole[i];
         }
         delete[] pole;
-
     }
-
-    string **getPole() const {
-        return pole;
-    }
-
-    void vypisPole(){
-        for (int j = 0; j < 20; j++) {
-            for (int i = 0; i < 20; i++) {
-                cout << pole[j][i] ;
-            }
-            cout << endl;
-        }
-    }
-
-    void setPole(string **pole) {
-        this->pole = pole;
-    }
-
-
 
 private:
     string** pole = new string*[20];

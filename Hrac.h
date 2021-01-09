@@ -1,6 +1,5 @@
 //
-// Created by Dominika on 29. 12. 2020.
-//AHOJ AHOJ AHOJ
+// Created by Dominika Barbieriková & Katarína Kalusová on 29. 12. 2020.
 //
 #include "Hadik.h"
 #ifndef SEMESTRALKA_HRAC_H
@@ -10,18 +9,9 @@
 
 class Hrac {
 public:
-    Hrac(Hadik* phadik) {
-        this->hadik=phadik;
-        this->body=0;
-    }
-
-    int getBody(){
-        return body;
-    }
-
-    void zvysBody(){
-        this->body++;
-    }
+    explicit Hrac(Hadik* phadik);
+    int getBody();
+    void zvysBody();
 
 private:
     int body;
