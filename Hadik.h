@@ -3,6 +3,7 @@
 //
 #include <string>
 #include <iostream>
+#include <unistd.h>
 #include "Pravidla.h"
 
 #ifndef SEMESTRALKA_HADIK_H
@@ -31,6 +32,7 @@ private:
     string** pole;
     string smer;
     string farba;
+    Pravidla *pravidla;
 };
 
 #endif //SEMESTRALKA_HADIK_H

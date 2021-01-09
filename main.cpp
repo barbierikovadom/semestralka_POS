@@ -23,15 +23,15 @@ int main() {
     objekt.vytvorNovyObjekt();
     pravidla.printBorder();
 
-    pravidla.vypisPole();
-    objekt.vytvorNovyObjekt();
-    pravidla.vypisPole();
-    hadik->zobrazSa(5,5);
-    pravidla.vypisPole();
+    //pravidla.vypisPole();
+    //objekt.vytvorNovyObjekt();
+    //pravidla.vypisPole();
+    //hadik->zobrazSa(5,5);
+    //pravidla.vypisPole();
 
     cout << " W, A, S, D \n" ;
 
-    char znak;
+    char znak = 'D';
 
     for (int i = 0; i < 50; ++i) {
         if(hadik->getX() == objekt.getX() && hadik->getY() == objekt.getY()) {
@@ -40,10 +40,12 @@ int main() {
             hadik->pridajDlzku();
             hrac->zvysBody();
         }
+
         scanf("  %c", &znak);
+
         if(hadik->move(znak)){
             cout << "score: " << hrac->getBody() << "\n";
-            pravidla.vypisPole();
+            //pravidla.vypisPole();
         }
     }
 }
