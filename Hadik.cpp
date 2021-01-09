@@ -19,7 +19,7 @@ void Hadik::goTo(int px, int py) {
     this->setX(px);
     this->setY(py);
 
-    //snaha o vypysovanie chvostika
+
     if(this->smer == "pravo") {
         this->pole[this->x][this->y] = "> ";
     }
@@ -36,6 +36,8 @@ void Hadik::goTo(int px, int py) {
 
 void Hadik::zobrazSa(int px, int py) {
     this->goTo(px,py);
+
+    //snaha o vypysovanie chvostika
     if(this->smer == "pravo") {
         for (int i = px - 1; i > px - dlzka - 1; i--) {
             this->pole[py][i] = "- ";

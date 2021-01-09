@@ -23,11 +23,6 @@ int main() {
     objekt.vytvorNovyObjekt();
     pravidla.printBorder();
 
-    if(hadik->getX() == objekt.getX() && hadik->getY() == objekt.getY()) {
-        objekt.setZjedeny(true);
-        hadik->pridajDlzku();
-        hrac->zvysBody();
-    }
     pravidla.vypisPole();
     objekt.vytvorNovyObjekt();
     pravidla.vypisPole();
@@ -36,8 +31,15 @@ int main() {
 
     cout << " W, A, S, D \n" ;
 
-    char  znak;
+    char znak;
+
     for (int i = 0; i < 50; ++i) {
+        if(hadik->getX() == objekt.getX() && hadik->getY() == objekt.getY()) {
+            objekt.setZjedeny(true);
+            objekt.vytvorNovyObjekt();
+            hadik->pridajDlzku();
+            hrac->zvysBody();
+        }
         scanf("  %c", &znak);
         if(hadik->move(znak)){
             cout << "score: " << hrac->getBody() << "\n";
