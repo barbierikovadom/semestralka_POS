@@ -13,6 +13,6 @@ int Hrac::getBody() {
     return body;
 }
 
-void Hrac::zvysBody() {
-    this->body++;
+void Hrac::zvysBody(int pBody) {
+    this->body += pBody;
 }

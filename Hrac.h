@@ -11,7 +11,7 @@ class Hrac {
 public:
     explicit Hrac(Hadik* phadik);
     int getBody();
-    void zvysBody();
+    void zvysBody(int pBody);
 
 private:
     int body;

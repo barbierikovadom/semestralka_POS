@@ -40,22 +40,22 @@ void Hadik::zobrazSa(int px, int py) {
     //snaha o vypysovanie chvostika
     if(this->smer == "pravo") {
         for (int i = px - 1; i > px - dlzka - 1; i--) {
-            this->pole[py][i] = "- ";
+           // this->pole[py][i] = "- ";
         }
     }
     if(this->smer == "lavo") {
         for (int i = px - 1; i > px - dlzka - 1; i--) {
-            this->pole[py][i] = "- ";
+           // this->pole[py][i] = "- ";
         }
     }
     if(this->smer == "hore") {
         for (int i = px - 1; i > px - dlzka - 1; i--) {
-            this->pole[py][i] = "- ";
+           // this->pole[py][i] = "- ";
         }
     }
     if(this->smer == "dole") {
         for (int i = px - 1; i > px - dlzka - 1; i--) {
-            this->pole[py][i] = "- ";
+           // this->pole[py][i] = "- ";
         }
     }
 }

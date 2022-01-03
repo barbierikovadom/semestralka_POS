@@ -19,7 +19,7 @@ public:
     }
 
     int getPocetBodov() const {
-        return pocetBodov;
+        return this->pocetBodov;
     }
 
     bool isZjedeny() const {
@@ -29,6 +29,7 @@ public:
     void setZjedeny(bool pZjedeny) {
         this->zjedeny = pZjedeny;
         this->pole[x][y] = "  ";
+        this->vytvorNovyObjekt();
     }
 
     int getX() const {
@@ -49,6 +50,7 @@ public:
             this->y = rand() % 17 + 1;
             this->pole[x][y] = "? ";
             this->zjedeny = false;
+            this->pocetBodov = rand() % 4 + 1;
         }
     }
 

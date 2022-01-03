@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <stdio.h>
-#include <string>
+#include <string.h>
 #include <curses.h>
 
 #ifndef SEMESTRALKA_PRAVIDLA_H
@@ -30,6 +30,5 @@ private:
     string** pole = new string*[20];
 
 };
-
 
 #endif //SEMESTRALKA_PRAVIDLA_H
