@@ -12,25 +12,42 @@ Hadik::Hadik(Pravidla *pPravidla) {
     this->pole[this->x][this->y] = "> ";
     this->smer = "pravo";
     this->dlzka = 0;
+    this->pravidla = pPravidla;
 }
 
 void Hadik::goTo(int px, int py) {
     this->pole[this->x][this->y] = "  ";
     this->setX(px);
     this->setY(py);
+    int i,j,k,l = 0;
 
-
-    if(this->smer == "pravo") {
-        this->pole[this->x][this->y] = "> ";
+    while(this->smer == "pravo") {
+        this->pole[this->x][(this->y)+i] = "> ";
+        this->pole[this->x][(this->y)+i-1] = "  ";
+        pravidla->vypisPole();
+        i++;
+        usleep(1000000);
     }
-    if(this->smer == "lavo") {
-        this->pole[this->x][this->y] = "< ";
+    while(this->smer == "lavo") {
+        this->pole[this->x][this->y-j] = "< ";
+        this->pole[this->x][this->y-j+1] = "  ";
+        pravidla->vypisPole();
+        j++;
+        usleep(1000000);
     }
-    if(this->smer == "hore") {
-        this->pole[this->x][this->y] = "^ ";
+    while(this->smer == "hore") {
+        this->pole[this->x-k][this->y] = "^ ";
+        this->pole[this->x-k+1][this->y] = "  ";
+        pravidla->vypisPole();
+        k++;
+        usleep(1000000);
     }
-    if(this->smer == "dole") {
-        this->pole[this->x][this->y] = "v ";
+    while(this->smer == "dole") {
+        this->pole[this->x+l][this->y] = "v ";
+        this->pole[this->x+l-1][this->y] = "  ";
+        pravidla->vypisPole();
+        l++;
+        usleep(1000000);
     }
 }
 
@@ -38,7 +55,7 @@ void Hadik::zobrazSa(int px, int py) {
     this->goTo(px,py);
 
     //snaha o vypysovanie chvostika
-    if(this->smer == "pravo") {
+    /**if(this->smer == "pravo") {
         for (int i = px - 1; i > px - dlzka - 1; i--) {
            // this->pole[py][i] = "- ";
         }
@@ -57,7 +74,7 @@ void Hadik::zobrazSa(int px, int py) {
         for (int i = px - 1; i > px - dlzka - 1; i--) {
            // this->pole[py][i] = "- ";
         }
-    }
+    }**/
 }
 
 bool Hadik::move(char znak) {
